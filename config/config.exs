@@ -17,7 +17,7 @@ config :director, DirectorWeb.Endpoint,
   render_errors: [view: DirectorWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Director.PubSub, adapter: Phoenix.PubSub.PG2],
   live_view: [
-    signing_salt: "SECRET_SALT"
+    signing_salt: "bA18sSlsqtDJlsMudUXUFs6sOI9AhVar"
   ]
 
 # Configures Elixir's Logger
