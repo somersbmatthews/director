@@ -1,0 +1,23 @@
+language: elixir
+elixir:
+  - 1.9
+otp_release:
+  - 22.0
+sudo: false
+env:
+  global:
+  - ELIXIR_ASSERT_TIMEOUT=2000
+services:
+  - postgresql
+postgres:
+  adapter: postgresql
+  database: elixir_helper_test
+  username: postgres
+  password: postgres
+  hostname: localhost
+  pool: Ecto.Adapters.SQL.Sandbox
+env:
+  - MIX_ENV=test
+before_script:
+  - psql -c "CREATE DATABASE elixir_helper_test;" -U postgres
+  - mix ecto.create
