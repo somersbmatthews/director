@@ -15,7 +15,10 @@ config :director, DirectorWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "tx3cQmqx6bCAGJXmPgVe8CB5tNTqvCeTllVkPrd6rKdiyzoi1XyYcGxPXXnk3fPG",
   render_errors: [view: DirectorWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Director.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: Director.PubSub, adapter: Phoenix.PubSub.PG2],
+  live_view: [
+    signing_salt: "SECRET_SALT"
+  ]
 
 # Configures Elixir's Logger
 config :logger, :console,
